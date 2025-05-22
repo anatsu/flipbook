@@ -23,16 +23,33 @@
 <body>
 
 
-  <!-- Aquí se crea el visor del PDF -->
-  <div class="_df_book"
-       id="mi_flip"
-       source="example-assets/books/intro.pdf"
+	  <div class="_df_book"
+	       id="mi_flipM"
+	       source="example-assets/books/intro.pdf"
+	
+	        webgl= "true"
+	        height= "10px"
+	       >
+	  </div>
+	  <div class="_df_book"
+	       id="mi_flipW"
+	       source="example-assets/books/intro.pdf"
+	
+	        webgl= "true"
+	       >
+	  </div>
 
-        webgl= "true"
-        style="width: 100px"
-       >
-  </div>
+ <script>
+        // Obtener el tipo de dispositivo
+        if (matchMedia("only screen and (max-width: 768px)").matches) {
+            // Mostrar contenido móvil
+            document.getElementById("mi_flipW").style.display = "none";
+        } else {
+            // Mostrar contenido web
 
+            document.getElementById("mi_flipM").style.display = "none";
+        }
+    </script>
 
 
 
